@@ -28,7 +28,8 @@
                 if (event.keyCode == 13) {
 					
                    // location.href = 'https://www.google.com/search?q=site:yumemor.com ' + $(this).val();
-					 location.href = 'http://www.baidu.com' + $(this).val();
+					// window.location.href = 'http://www.baidu.com/s?wd=' + $(this).val();
+					 window.open('http://www.baidu.com/s?wd=' + $(this).val()); 
                     return false;
                 }
             })
