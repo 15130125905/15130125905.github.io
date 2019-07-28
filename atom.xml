@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-24T14:17:53.230Z</updated>
+  <updated>2019-07-28T06:41:32.681Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux系统vim命令的一些体验</title>
+    <link href="http://yoursite.com/2019/07/28/19_7_28-linux-vim/"/>
+    <id>http://yoursite.com/2019/07/28/19_7_28-linux-vim/</id>
+    <published>2019-07-28T06:40:06.860Z</published>
+    <updated>2019-07-28T06:41:32.681Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于权限问题"><a href="#关于权限问题" class="headerlink" title="关于权限问题"></a>关于权限问题</h2><p>在使用命令时，前面加sudo。<br>例如报错：Linux下使用vi新建文件保存文件时遇到错误：E212: Can’t open file for writing</p><h2 id="文本的复制"><a href="#文本的复制" class="headerlink" title="文本的复制"></a>文本的复制</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 y 进行复制。</p><h2 id="文本的剪切"><a href="#文本的剪切" class="headerlink" title="文本的剪切"></a>文本的剪切</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 d 进行剪切。</p><h2 id="文本的撤销恢复"><a href="#文本的撤销恢复" class="headerlink" title="文本的撤销恢复"></a>文本的撤销恢复</h2><p>只要在一般模式中按u即可撤销最近一个操作。如果撤销了过多的操作，按Ctrl+r即可恢复最近一次撤销。</p><h2 id="文本的字符串搜索"><a href="#文本的字符串搜索" class="headerlink" title="文本的字符串搜索"></a>文本的字符串搜索</h2><p>命令模式下，输入    /字符串。<br>查看下一个匹配，按下n(小写n)；<br>跳转到上一个匹配，按下N（大写N）。</p><h2 id="文本的显示行号、删除行号"><a href="#文本的显示行号、删除行号" class="headerlink" title="文本的显示行号、删除行号"></a>文本的显示行号、删除行号</h2><p>:set nu 显示行号<br>:set nonu 取消显示行号 </p><blockquote><p>未完待续</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;关于权限问题&quot;&gt;&lt;a href=&quot;#关于权限问题&quot; class=&quot;headerlink&quot; title=&quot;关于权限问题&quot;&gt;&lt;/a&gt;关于权限问题&lt;/h2&gt;&lt;p&gt;在使用命令时，前面加sudo。&lt;br&gt;例如报错：Linux下使用vi新建文件保存文件时遇到错误：E212: 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Markdown基本语法</title>
