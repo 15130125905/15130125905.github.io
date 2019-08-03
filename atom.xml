@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-02T14:41:22.487Z</updated>
+  <updated>2019-08-03T04:46:57.115Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux服务器的远程操作</title>
+    <link href="http://yoursite.com/2019/08/03/19_8_3-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://yoursite.com/2019/08/03/19_8_3-远程连接linux服务器/</id>
+    <published>2019-08-03T04:46:19.432Z</published>
+    <updated>2019-08-03T04:46:57.115Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用xshell进行远程连接"><a href="#使用xshell进行远程连接" class="headerlink" title="使用xshell进行远程连接"></a>使用xshell进行远程连接</h2><ul><li>百度网盘 <a href="https://pan.baidu.com/s/1p9Mi66E74soAxKwF0ULp3Q" target="_blank">请摸我</a></li><li>提取码    bqpx</li></ul><h2 id="常用的EXE"><a href="#常用的EXE" class="headerlink" title="常用的EXE"></a>常用的EXE</h2><ul><li>xshell 操作命令</li><li>xftp 传输文件</li></ul><blockquote><p>打开xshell默认为本地系统cmd<br>ssh协议默认端口 22<br>安装完毕后，有的连接虚拟机不能连接，我这的原因是因为没有开启ssh服务。</p></blockquote><blockquote><p> 未完</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;使用xshell进行远程连接&quot;&gt;&lt;a href=&quot;#使用xshell进行远程连接&quot; class=&quot;headerlink&quot; title=&quot;使用xshell进行远程连接&quot;&gt;&lt;/a&gt;使用xshell进行远程连接&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;百度网盘 &lt;a href=&quot;ht
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Linux的基本命令和目录解释</title>
     <link href="http://yoursite.com/2019/08/02/19_8_2-linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A/"/>
     <id>http://yoursite.com/2019/08/02/19_8_2-linux基本命令和目录解释/</id>
     <published>2019-08-02T14:30:48.597Z</published>
-    <updated>2019-08-02T14:41:22.487Z</updated>
+    <updated>2019-08-03T04:50:04.859Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h2><ul><li>ll  管理员才能用的指令</li><li>ls 各个用户都能用， 参数：  -a所有文件，包含隐藏文件   -l 详细信息</li></ul><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><ul><li>mkdir 参数 -p 父目录不存在生成父目录</li></ul><h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><ul><li>touch 生成空文件</li><li>echo 生成一个带内容的文件  echo  abc &gt; hello.text  一个&gt;写入  ， 两个&gt;&gt; 追加</li></ul><h2 id="显示文本文件内容"><a href="#显示文本文件内容" class="headerlink" title="显示文本文件内容"></a>显示文本文件内容</h2><ul><li>cat 显示文本文件内容</li></ul><h2 id="复制文件或目录"><a href="#复制文件或目录" class="headerlink" title="复制文件或目录"></a>复制文件或目录</h2><ul><li>cp 复制文件或目录</li></ul><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ul><li>rm删除  参数 -f强制删除   -r 递归删除  </li><li>删库跑路 rm -rf /*</li></ul><h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><ul><li>mv</li></ul><h2 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h2><ul><li>find  -name  hello 查找文件</li></ul><h2 id="检索文件内容查找"><a href="#检索文件内容查找" class="headerlink" title="检索文件内容查找"></a>检索文件内容查找</h2><ul><li>grep  检索查找  grep liu ./hello/helloword.txt </li></ul><h2 id="分页显示"><a href="#分页显示" class="headerlink" title="分页显示"></a>分页显示</h2><ul><li>more 分页显示文本文件 （more –help 查看帮助）</li></ul><h2 id="显示文件结尾"><a href="#显示文件结尾" class="headerlink" title="显示文件结尾"></a>显示文件结尾</h2><ul><li>tail 显示结尾内容 参数： -f  跟踪输出 （类似于tomcat控制台）</li></ul><blockquote><p> shell 复制粘贴  ： 复制 ctrl + insert  粘贴 shift  + insert （本人试的粘贴不行，奇怪了）</p></blockquote><hr><h1 id="文件夹解释"><a href="#文件夹解释" class="headerlink" title="文件夹解释"></a>文件夹解释</h1><ul><li>bin   - exe可执行文件</li><li>boot - 系统启动的文件</li><li>dev  - 存放设备文件： 打印机</li><li>etc   - 存放系统配置文件 ： mysql的配置文件 等等 </li><li>home - 账户目录</li><li>lib - 运行依赖</li><li>opt - 额外安装的软件</li><li>proc - 存放当前内存的映射</li><li>root - 超级用户目录</li><li>sbin - 超级用户的exe可执行文件</li><li>var  存放数据的目录</li></ul><h2 id="比较重要的四个目录"><a href="#比较重要的四个目录" class="headerlink" title="比较重要的四个目录"></a>比较重要的四个目录</h2><ul><li>home </li><li>etc</li><li>usr/local linux下载的软件安装的程序放到此目录  </li><li>var  存放数据的目录。mysql  .db</li></ul><blockquote><p>未完</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h2><ul><li>ll  管理员才能用的指令</li><li>ls 各个用户都能用， 参数：  -a所有文件，包含隐藏文件   -l 详细信息</li></ul><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><ul><li>mkdir 参数 -p 父目录不存在生成父目录</li></ul><h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><ul><li>touch 生成空文件</li><li>echo 生成一个带内容的文件  echo  abc &gt; hello.text  一个&gt;写入  ， 两个&gt;&gt; 追加</li></ul><h2 id="显示文本文件内容"><a href="#显示文本文件内容" class="headerlink" title="显示文本文件内容"></a>显示文本文件内容</h2><ul><li>cat 显示文本文件内容</li></ul><h2 id="复制文件或目录"><a href="#复制文件或目录" class="headerlink" title="复制文件或目录"></a>复制文件或目录</h2><ul><li>cp 复制文件或目录</li></ul><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ul><li>rm删除  参数 -f强制删除   -r 递归删除  </li><li>删库跑路 rm -rf /*</li></ul><h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><ul><li>mv</li></ul><h2 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h2><ul><li>find  -name  hello 查找文件</li></ul><h2 id="检索文件内容查找"><a href="#检索文件内容查找" class="headerlink" title="检索文件内容查找"></a>检索文件内容查找</h2><ul><li>grep  检索查找  grep liu ./hello/helloword.txt </li></ul><h2 id="分页显示"><a href="#分页显示" class="headerlink" title="分页显示"></a>分页显示</h2><ul><li>more 分页显示文本文件 （more –help 查看帮助）</li></ul><h2 id="显示文件结尾"><a href="#显示文件结尾" class="headerlink" title="显示文件结尾"></a>显示文件结尾</h2><ul><li>tail 显示结尾内容 参数： -f  跟踪输出 （类似于tomcat控制台）</li></ul><blockquote><p> shell 复制粘贴  ： 复制 ctrl + insert  粘贴 shift  + insert （本人试的粘贴不行，奇怪了）</p></blockquote><hr><h1 id="Linux的系统命令"><a href="#Linux的系统命令" class="headerlink" title="Linux的系统命令"></a>Linux的系统命令</h1><ul><li>top 相当于任务管理器</li><li>ps  当前进程的快照状态</li><li>du 查看使用空间的</li><li>free 显示当前系统内存的使用情况，包括物理内存、交换内存(swap)和内核缓冲区内存。</li><li>netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等</li></ul><hr><h1 id="压缩解压缩"><a href="#压缩解压缩" class="headerlink" title="压缩解压缩"></a>压缩解压缩</h1><p>tar</p><ul><li>-c压缩</li><li>-x解压缩</li><li>-z gzip算法压缩。压缩文件  *.tar.gz</li><li>-j  bzip2算法压缩。 压缩文件 *.tar.bz2</li><li>-v显示文件列表</li><li>-f 文件名</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -czvf ys.tar.gz .  压缩根据gzip算法</span><br><span class="line">tar -xzvf ys.tar.gz  解压缩根据gzip算法</span><br><span class="line"></span><br><span class="line">tar -cjvf kk.tar.bz2 .   压缩当前目录下所有文件为 kk.tar.bz2</span><br><span class="line">tar -xjvf kk.tar.bz2    解压缩根据bzip2算法</span><br></pre></td></tr></table></figure><hr><h1 id="文件夹解释"><a href="#文件夹解释" class="headerlink" title="文件夹解释"></a>文件夹解释</h1><ul><li>bin   - exe可执行文件</li><li>boot - 系统启动的文件</li><li>dev  - 存放设备文件： 打印机</li><li>etc   - 存放系统配置文件 ： mysql的配置文件 等等 </li><li>home - 账户目录</li><li>lib - 运行依赖</li><li>opt - 额外安装的软件</li><li>proc - 存放当前内存的映射</li><li>root - 超级用户目录</li><li>sbin - 超级用户的exe可执行文件</li><li>var  存放数据的目录</li></ul><h3 id="比较重要的四个目录"><a href="#比较重要的四个目录" class="headerlink" title="比较重要的四个目录"></a>比较重要的四个目录</h3><ul><li>home </li><li>etc</li><li>usr/local linux下载的软件安装的程序放到此目录  </li><li>var  存放数据的目录。mysql  .db</li></ul><blockquote><p>未完</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -63,15 +85,15 @@
     <link href="http://yoursite.com/2019/07/28/19_7_28-linux-vim/"/>
     <id>http://yoursite.com/2019/07/28/19_7_28-linux-vim/</id>
     <published>2019-07-28T06:40:06.860Z</published>
-    <updated>2019-07-28T06:41:32.681Z</updated>
+    <updated>2019-08-02T15:06:04.157Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="关于权限问题"><a href="#关于权限问题" class="headerlink" title="关于权限问题"></a>关于权限问题</h2><p>在使用命令时，前面加sudo。<br>例如报错：Linux下使用vi新建文件保存文件时遇到错误：E212: Can’t open file for writing</p><h2 id="文本的复制"><a href="#文本的复制" class="headerlink" title="文本的复制"></a>文本的复制</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 y 进行复制。</p><h2 id="文本的剪切"><a href="#文本的剪切" class="headerlink" title="文本的剪切"></a>文本的剪切</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 d 进行剪切。</p><h2 id="文本的撤销恢复"><a href="#文本的撤销恢复" class="headerlink" title="文本的撤销恢复"></a>文本的撤销恢复</h2><p>只要在一般模式中按u即可撤销最近一个操作。如果撤销了过多的操作，按Ctrl+r即可恢复最近一次撤销。</p><h2 id="文本的字符串搜索"><a href="#文本的字符串搜索" class="headerlink" title="文本的字符串搜索"></a>文本的字符串搜索</h2><p>命令模式下，输入    /字符串。<br>查看下一个匹配，按下n(小写n)；<br>跳转到上一个匹配，按下N（大写N）。</p><h2 id="文本的显示行号、删除行号"><a href="#文本的显示行号、删除行号" class="headerlink" title="文本的显示行号、删除行号"></a>文本的显示行号、删除行号</h2><p>:set nu 显示行号<br>:set nonu 取消显示行号 </p><blockquote><p>未完待续</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="三个模式"><a href="#三个模式" class="headerlink" title="三个模式"></a>三个模式</h2><p>Nomal mode（默认模式）。<br>Insert mode （插入模式 i I  a  A  ）。<br>Visual mode（可视模式，取名叫光标模式或者选择模式）。- ctrl + v 或者 v 或 V</p><h2 id="正则表达式相关"><a href="#正则表达式相关" class="headerlink" title="正则表达式相关"></a>正则表达式相关</h2><ul><li>$ ： 移动光标到行尾</li><li>^ : 移动光标到当前行的第一个字母位置</li></ul><h2 id="移动相关"><a href="#移动相关" class="headerlink" title="移动相关"></a>移动相关</h2><p>h（左）、l（右）、j（上）、k（下）</p><h2 id="操作类"><a href="#操作类" class="headerlink" title="操作类"></a>操作类</h2><p>d（delete）、i（insert）、o(另起一行insert)、a（append）、c（change,将当前行清空insert）、y（copy）、p（paste）</p><h2 id="文本的复制"><a href="#文本的复制" class="headerlink" title="文本的复制"></a>文本的复制</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 y 进行复制。</p><h2 id="文本的剪切"><a href="#文本的剪切" class="headerlink" title="文本的剪切"></a>文本的剪切</h2><p>要选中内容进行复制，先在命令模式下按 v 进入 Visual Mode，然后用 方向键 或 hjkl 选择文本，再按 d 进行剪切。</p><h2 id="文本的撤销恢复"><a href="#文本的撤销恢复" class="headerlink" title="文本的撤销恢复"></a>文本的撤销恢复</h2><p>只要在一般模式中按u即可撤销最近一个操作。如果撤销了过多的操作，按Ctrl+r即可恢复最近一次撤销。</p><h2 id="文本的字符串搜索"><a href="#文本的字符串搜索" class="headerlink" title="文本的字符串搜索"></a>文本的字符串搜索</h2><p>命令模式下，输入    /字符串。<br>查看下一个匹配，按下n(小写n)；<br>跳转到上一个匹配，按下N（大写N）。</p><h2 id="文本的显示行号、删除行号"><a href="#文本的显示行号、删除行号" class="headerlink" title="文本的显示行号、删除行号"></a>文本的显示行号、删除行号</h2><p>:set nu 显示行号<br>:set nonu 取消显示行号 </p><blockquote><p>未完待续</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;关于权限问题&quot;&gt;&lt;a href=&quot;#关于权限问题&quot; class=&quot;headerlink&quot; title=&quot;关于权限问题&quot;&gt;&lt;/a&gt;关于权限问题&lt;/h2&gt;&lt;p&gt;在使用命令时，前面加sudo。&lt;br&gt;例如报错：Linux下使用vi新建文件保存文件时遇到错误：E212: 
+        &lt;h2 id=&quot;三个模式&quot;&gt;&lt;a href=&quot;#三个模式&quot; class=&quot;headerlink&quot; title=&quot;三个模式&quot;&gt;&lt;/a&gt;三个模式&lt;/h2&gt;&lt;p&gt;Nomal mode（默认模式）。&lt;br&gt;Insert mode （插入模式 i I  a  A  ）。&lt;br&gt;Visual
       
     
     </summary>
