@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/08/03/19_7_28-linux-vim/</loc>
+    
+    <lastmod>2019-08-03T09:56:49.819Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/08/02/19_8_2-linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A/</loc>
+    
+    <lastmod>2019-08-03T09:50:27.807Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/08/03/19_8_3-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2019-08-03T09:48:06.947Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/08/03/19_7_28-linux-vim/</loc>
-    
-    <lastmod>2019-08-03T09:41:44.317Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/08/03/19_7_24-markdown%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
     
     <lastmod>2019-08-03T09:37:43.296Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/08/03/19_8_2-linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A/</loc>
-    
-    <lastmod>2019-08-03T09:01:53.133Z</lastmod>
     
   </url>
   
