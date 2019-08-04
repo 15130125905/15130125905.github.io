@@ -93,7 +93,29 @@
 <blockquote>
 <p>安装流程<br> 下载tar包，上传至服务器<br> 解压在/usr/local<br> 配置一些环境变量<br> 在bin下运行 ./startup.sh<br> 查看是否启动成功cd ../logs/ 执行tail -f catalina.out，或者直接反问ip+端口</p>
 </blockquote>
-<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p>用的比较方便的命令</p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><blockquote>
+<ul>
+<li>通过apt-get 安装mysql后；</li>
+<li>开启远程连接支持，在/etc/mysql/my.ini文件中（cat  my.ini），有<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;  !includedir /etc/mysql/conf.d/</span><br><span class="line">&gt;  !includedir /etc/mysql/mysql.conf.d/</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  通过 grep bind-address /etc/mysql/mysql.conf.d/mysqld.cnf<br>  可找到bind-address= xxx.xxx.xxx.xxx 注释掉</p>
+<ul>
+<li>创建用户，授权。为啥要创建两个myuser并且有localhost和%，好像是localhost是在服务器本地连接，%是为了在任何ip下都能连接(<strong>解释的不到位，希望有人能出来指正</strong>)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;   CREATE USER &apos;myuser&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;mypass&apos;;</span><br><span class="line">&gt;   CREATE USER &apos;myuser&apos;@&apos;%&apos; IDENTIFIED BY &apos;mypass&apos;;</span><br><span class="line">&gt;  GRANT ALL ON *.* TO &apos;myuser&apos;@&apos;localhost&apos;;</span><br><span class="line">&gt;  GRANT ALL ON *.* TO &apos;myuser&apos;@&apos;%&apos;;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>重启服务 restart mysql service:<ul>
+<li>mysql安装开启远程服务会遇到很多问题。像1045啥的，对应百度把。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>可能用到的命令</p>
 <ul>
 <li>find -name 名字 - 查找文件，跟eclipse 的ctrl + shift + R类似</li>
 <li>grep 字段 某文件 - 在某文件下查找某字段</li>
