@@ -139,7 +139,23 @@
 </ul>
 <hr>
 <h1 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h1><blockquote>
-<p>未完</p>
+<p>dokcer-compose用于快速部署分布式应用。是容器和容器之间的相互配合。由python编写。</p>
+</blockquote>
+<ul>
+<li><p>创建docker-compose.yml。yml语言不能用tab，必须空格</p>
+</li>
+<li><p>简单应用cmpose启动一个8080的tomcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;2&quot;</span><br><span class="line">services:</span><br><span class="line">  tomcat:</span><br><span class="line">    restart: always</span><br><span class="line">    image: tomcat</span><br><span class="line">    container_name: tomcat</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8080:8080&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动compose。 docker-compose  up  (参数-d后台运行)</p>
+</li>
+<li><p>关闭容器  docker-compose dowm</p>
+</li>
+<li><p>查看日志   docker-compose logs tomcat</p>
+</li>
+</ul>
+<blockquote>
+<p>未完<br><a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p>
 </blockquote>
 
 	</div>
