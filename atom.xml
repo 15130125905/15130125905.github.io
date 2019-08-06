@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-06T15:33:57.871Z</updated>
+  <updated>2019-08-06T15:40:09.452Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/08/06/19_8_6-GitHub+Git+Gitlab%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2019/08/06/19_8_6-GitHub+Git+Gitlab的一些记录/</id>
     <published>2019-08-06T15:33:33.171Z</published>
-    <updated>2019-08-06T15:33:57.871Z</updated>
+    <updated>2019-08-06T15:40:09.452Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>夜阑卧听风吹雨，铁马冰河入梦来。铁马是你，冰河也是你。</p></blockquote><h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><ul><li>第三方托管平台</li><li>初始化仓库。 readme.md (md为markdown语法的文件) + 开源协议（apache为公开）</li></ul><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><ul><li>简介<ul><li>分布式版本库，本身是个命令行工具</li><li>windows下载git, tortoiseGit以及乌龟的中文包</li><li>支持本地运行。</li></ul></li><li>使用<ul><li>克隆 git clone +地址   （克隆下来的项目中有 .gitignore用来过滤不被推送同步的。我们需要添加.project,.idea，.project为elipcse生成，.idea为idea生成）</li><li>添加，git中间有个缓存的定义，需要添加才能提交。git add * </li><li>提交   git commit -m ‘注释’</li><li>推送。  推送到服务器。 git push</li></ul></li></ul><h1 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h1><ul><li>git代码托管，开源的git平台</li><li>Ruby写的运行于 Rails.  (java  on tomcat)</li><li>使用Docker安装GitLab</li><li>虚拟机内存不能低于2GB. 否则会 <strong>卡</strong></li><li>配置SSH, 免密登录推送。 持续登录集成。</li></ul><blockquote><p>未完<br><a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p></blockquote>]]></content>
     
