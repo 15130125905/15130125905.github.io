@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Nexus+Docker私服+GitLab的一些记录 | 刘耀方的个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- css('js/google-code-prettify/vibrant-ink.min.css') -->
+
+  </head>
+
+  <body>
+</body></html>
+<header>
+	<a id="logo" href="/" title="刘耀方的个人博客">
+	<img src="/favicon.png" alt="刘耀方的个人博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="请输入名称..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://weibo.com/u/5726097602" target="_blank">微博</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      Nexus+Docker私服+GitLab的一些记录
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="Nexus-N-K-SA-SI"><a href="#Nexus-N-K-SA-SI" class="headerlink" title="Nexus (N K SA SI)"></a>Nexus (N K SA SI)</h1><ul>
+<li><p>基本</p>
+<ul>
+<li>一种maven的仓库管理器</li>
+<li>比较吃内存，虚拟机最好开2G内存</li>
+</ul>
+</li>
+<li><p>在项目中为什么用私服</p>
+<ul>
+<li>企业模块开发，不想将代码暴露并随意修改，所以放到私服公用<ul>
+<li>流程</li>
+<li>配置认证信息。maven的setting.xml添加nexus认证信息（在servers的节点下）</li>
+<li>Maven的一些命令</li>
+<li>mvn install</li>
+<li>mvn deploy</li>
+<li>仓库有快照版本，发型版本等</li>
+<li>free -h  查询内存占用</li>
+<li>chmod 777修改权限</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol>
+<li>使用 Docker 来安装和运行 Nexus，docker-compose.yml内容为<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  version: &apos;2.0&apos;</span><br><span class="line">services:</span><br><span class="line">  nexus:</span><br><span class="line">    restart: always</span><br><span class="line">    image: sonatype/nexus3</span><br><span class="line">    container_name: nexus</span><br><span class="line">    ports:</span><br><span class="line">      - 7090:8081</span><br><span class="line">    volumes:</span><br><span class="line">      - /usr/local/docker/nexus/data:/nexus-data</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>启动<code>docker-compose up -d</code>。<br>查看是否启动成功docker-compose logs nexus(服务的名称)<br>第一次启动可能会出现权限问题<code>chmod 777 /usr/local/docker/nexus/data</code></p>
+<ol start="2">
+<li><p>登录<a href="http://192.168.2.133:7090/" target="_blank" rel="noopener">http://192.168.2.133:7090/</a> 用户名：admin 密码：admin123</p>
+</li>
+<li><p>配置认证信息,在 Maven settings.xml中添加 Nexus 认证信息(servers 节点下)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  &lt;server&gt;</span><br><span class="line">  &lt;id&gt;nexus-releases&lt;/id&gt;</span><br><span class="line">  &lt;username&gt;admin&lt;/username&gt;</span><br><span class="line">  &lt;password&gt;admin123&lt;/password&gt;</span><br><span class="line">&lt;/server&gt;</span><br><span class="line"></span><br><span class="line">&lt;server&gt;</span><br><span class="line">  &lt;id&gt;nexus-snapshots&lt;/id&gt;</span><br><span class="line">  &lt;username&gt;admin&lt;/username&gt;</span><br><span class="line">  &lt;password&gt;admin123&lt;/password&gt;</span><br><span class="line">&lt;/server&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置自动化部署.在 pom.xml 中添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 配置自动化部署 --&gt;</span><br><span class="line">&lt;distributionManagement&gt;</span><br><span class="line">	&lt;repository&gt;</span><br><span class="line">		&lt;id&gt;nexus-releases&lt;/id&gt;</span><br><span class="line">		&lt;name&gt;Nexus Release Repository&lt;/name&gt;</span><br><span class="line">		&lt;url&gt;http://192.168.2.133:7090/repository/maven-releases/&lt;/url&gt;</span><br><span class="line">	&lt;/repository&gt;</span><br><span class="line">	&lt;snapshotRepository&gt;</span><br><span class="line">		&lt;id&gt;nexus-snapshots&lt;/id&gt;</span><br><span class="line">		&lt;name&gt;Nexus Snapshot Repository&lt;/name&gt;</span><br><span class="line">		&lt;url&gt;http://192.168.2.133:7090/repository/maven-snapshots/&lt;/url&gt;</span><br><span class="line">	&lt;/snapshotRepository&gt;</span><br><span class="line">&lt;/distributionManagement&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到仓库 <code>mvn deploy</code></p>
+</li>
+</ol>
+<hr>
+<ol start="6">
+<li>上传第三方 JAR 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -X deploy:deploy-file  &quot;-DgroupId=cn.wolfcode&quot; &quot;-DartifactId=p2p&quot; &quot;-Dversion=3.6.0&quot; &quot;-Dpackaging=jar&quot; &quot;-Dfile=D:\nexus-textSf.jar&quot; &quot;-Durl=http://192.168.2.133:7090/repository/maven-3rd/&quot; &quot;-DrepositoryId=thirdparty&quot;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>为什么带双引号。不带双引号会报找不到pom的错。加了双引号就可以上传了。</p>
+<ol start="7">
+<li>使用上传的jar包。</li>
+<li>setting.xml添加镜像。 然后pom引入jar包。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">      &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">      &lt;name&gt;private maven&lt;/name&gt;</span><br><span class="line">      &lt;url&gt;http://192.168.2.133:7090/repository/maven-public/&lt;/url&gt;</span><br><span class="line">      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;        </span><br><span class="line">    &lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h1 id="Docker私服"><a href="#Docker私服" class="headerlink" title="Docker私服"></a>Docker私服</h1><ul>
+<li>安装使用registry</li>
+<li>docker pull 是从官网下载</li>
+<li>流程<ul>
+<li>配置客户端 /etc/docker/daemon.json</li>
+<li>docker info查看配置成功否</li>
+<li>docker tag tomcat 192.168.1.21:5000/tomcat</li>
+<li>docker push 192.168.1.21:5000/tomcat 推送到私服</li>
+<li>安装webui</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+	<div class="meta split">
+		
+		<time class="post-date" datetime="2019-08-07T15:51:36.487Z" itemprop="datePublished">2019-08-07</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="19_8_7-Nexus+Docker私服+GitLab的一些记录" data-title="Nexus+Docker私服+GitLab的一些记录" data-url="http://yoursite.com/2019/08/07/19_8_7-Nexus+Docker私服+GitLab的一些记录/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://raw.githubusercontent.com/15130125905/head/master/1.jpg' alt='liuyaofang'>
+					<div class="media__body">
+						<h4>刘耀方</h4>
+						<p class='site-description'>有道无术，术尚可求也;有术无道，止于术。</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="https://weibo.com/u/5726097602" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/15130125905" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+		<span>Theme by <a target="_blank" href="http://github.com/15130125905">liuyaofang</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
