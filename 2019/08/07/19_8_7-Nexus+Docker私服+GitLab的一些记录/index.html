@@ -3,7 +3,7 @@
   <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
-    <title>Nexus+Docker私服+GitLab的一些记录 | 刘耀方的个人博客</title>
+    <title>Nexus私服+Docker私服+GitLab私服的一些记录 | 刘耀方的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -74,12 +74,12 @@
 	
   
     <h1 class="post-title" itemprop="name">
-      Nexus+Docker私服+GitLab的一些记录
+      Nexus私服+Docker私服+GitLab私服的一些记录
     </h1>
   
 
 	<div class='post-body mb'>
-		<h1 id="Nexus-N-K-SA-SI"><a href="#Nexus-N-K-SA-SI" class="headerlink" title="Nexus (N K SA SI)"></a>Nexus (N K SA SI)</h1><ul>
+		<h1 id="Nexus私服-N-K-SA-SI"><a href="#Nexus私服-N-K-SA-SI" class="headerlink" title="Nexus私服 (N K SA SI)"></a>Nexus私服 (N K SA SI)</h1><ul>
 <li><p>基本</p>
 <ul>
 <li>一种maven的仓库管理器</li>
@@ -148,6 +148,18 @@
 </ul>
 </li>
 </ul>
+<hr>
+<ol>
+<li>拉取registry镜像<code>docker pull registry</code></li>
+<li>通过registry镜像启动容器<code>docker run -d -v /opt/docker-registy -p 5000:5000 --name myRegistry registry</code></li>
+<li>容器启动后打开浏览器输入192.168.140.132:5000/v2/ 返回{}说明运行正常</li>
+<li>修改/etc/docker/daemon.json文件,增加<code>&quot;insecure-registries&quot;: [&quot;192.168.140.132:5000&quot;]</code></li>
+<li>然后重启docker引擎 <code>service docker restart</code></li>
+<li>推送到私有服务器<code>docker pull 192.168.140.132:5000/liuyaofang/tomcat</code></li>
+<li>推送成功查看<a href="http://192.168.140.132:5000/v2/_catalog可以看到仓库" target="_blank" rel="noopener">http://192.168.140.132:5000/v2/_catalog可以看到仓库</a></li>
+<li><a href="http://192.168.140.132:5000/v2/仓库名/tags/list" target="_blank" rel="noopener">http://192.168.140.132:5000/v2/仓库名/tags/list</a> 可以查看tags标签</li>
+<li>拉取镜像 <code>docker pull 192.168.140.132:5000/liuyaofang/tomcat:my</code></li>
+</ol>
 
 	</div>
 	<div class="meta split">
@@ -159,7 +171,7 @@
 <!--评论-->
 
 	
-<div class="ds-thread" data-thread-key="19_8_7-Nexus+Docker私服+GitLab的一些记录" data-title="Nexus+Docker私服+GitLab的一些记录" data-url="http://yoursite.com/2019/08/07/19_8_7-Nexus+Docker私服+GitLab的一些记录/"></div>
+<div class="ds-thread" data-thread-key="19_8_7-Nexus+Docker私服+GitLab的一些记录" data-title="Nexus私服+Docker私服+GitLab私服的一些记录" data-url="http://yoursite.com/2019/08/07/19_8_7-Nexus+Docker私服+GitLab的一些记录/"></div>
 <script type="text/javascript">
 
 var duoshuoQuery = {short_name:"yumemor"};
