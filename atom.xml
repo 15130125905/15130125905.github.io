@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-16T14:55:48.046Z</updated>
+  <updated>2019-08-17T09:47:22.416Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微服务的一些记录与了解</title>
+    <link href="http://yoursite.com/2019/08/17/19_8_17-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%8E%E4%BA%86%E8%A7%A3/"/>
+    <id>http://yoursite.com/2019/08/17/19_8_17-微服务的一些记录与了解/</id>
+    <published>2019-08-17T09:47:01.209Z</published>
+    <updated>2019-08-17T09:47:22.416Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>从入门到入土。</p></blockquote><h1 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h1><ul><li>为什么使用微服务？<br>为了解耦</li><li>如何微服务？<ul><li>运行多个负载均衡器的实例。(并发)</li><li>将业务进一步分解为微服务。（分库）</li><li>大数据量时，将服务分区。（分表）</li></ul></li><li>SOA架构和微服务架构区别<ul><li>SOA面向服务架构。还没有微服务架构的前沿。</li></ul></li><li>微服务架构如何通信？<ul><li>RESTAPI  (http) 对外 - springboot + springcloud</li><li>RPC远程调用（对内） - Dubbo + zookeeper(服务的注册与发现，分布式锁)</li></ul></li><li>服务挂了怎么办？<ul><li>重试机制</li><li>限流</li><li>熔断机制</li><li>负载均衡</li><li>服务降级<ul><li>什么是分布式锁？<br>与单体应用的Synchronized类似。 保证数据的一致性。</li></ul></li></ul></li></ul><h1 id="SpringBoot了解"><a href="#SpringBoot了解" class="headerlink" title="SpringBoot了解"></a>SpringBoot了解</h1><ol><li>banner.text 自定义学习</li><li>配置文件 properties/yml。logback作为日志框架</li><li>数据渲染。 thymeleaf   (或freemarker、beetl)</li><li>整合。mysql,  mybatis(tk.mybatis国人封装)。</li></ol><blockquote><p>未完  &gt; <a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;从入门到入土。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;了解&quot;&gt;&lt;a href=&quot;#了解&quot; class=&quot;headerlink&quot; title=&quot;了解&quot;&gt;&lt;/a&gt;了解&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;为什么使用微服务？&lt;br&gt;为了解耦&lt;/li&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>powerDesigner的一些记录</title>

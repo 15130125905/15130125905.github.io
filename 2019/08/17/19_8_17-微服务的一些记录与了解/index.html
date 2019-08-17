@@ -3,7 +3,7 @@
   <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
-    <title>刘耀方的个人博客</title>
+    <title>微服务的一些记录与了解 | 刘耀方的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -69,60 +69,95 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2019/08/02/19_8_2-linux基本命令和目录解释/">Linux的基本命令和目录解释</a></span>
-            <time class="post-time" datetime="2019-08-02T14:30:48.597Z" itemprop="datePublished">2019-08-02</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2019/08/01/19_8_1-docker基本用法/">docker的基本用法</a></span>
-            <time class="post-time" datetime="2019-08-01T15:36:23.650Z" itemprop="datePublished">2019-08-01</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2019/07/21/hello-world/">Hello World</a></span>
-            <time class="post-time" datetime="2019-07-21T03:56:37.170Z" itemprop="datePublished">2019-07-21</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
-      <div class="pagination mb+ js-pagination">
-        <div class="js-next pagination__load">
-            
-        </div>
-    </div>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      微服务的一些记录与了解
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<blockquote>
+<p>从入门到入土。</p>
+</blockquote>
+<h1 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h1><ul>
+<li>为什么使用微服务？<br>为了解耦</li>
+<li>如何微服务？<ul>
+<li>运行多个负载均衡器的实例。(并发)</li>
+<li>将业务进一步分解为微服务。（分库）</li>
+<li>大数据量时，将服务分区。（分表）</li>
+</ul>
+</li>
+<li>SOA架构和微服务架构区别<ul>
+<li>SOA面向服务架构。还没有微服务架构的前沿。</li>
+</ul>
+</li>
+<li>微服务架构如何通信？<ul>
+<li>RESTAPI  (http) 对外 - springboot + springcloud</li>
+<li>RPC远程调用（对内） - Dubbo + zookeeper(服务的注册与发现，分布式锁)</li>
+</ul>
+</li>
+<li>服务挂了怎么办？<ul>
+<li>重试机制</li>
+<li>限流</li>
+<li>熔断机制</li>
+<li>负载均衡</li>
+<li>服务降级<ul>
+<li>什么是分布式锁？<br>与单体应用的Synchronized类似。 保证数据的一致性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="SpringBoot了解"><a href="#SpringBoot了解" class="headerlink" title="SpringBoot了解"></a>SpringBoot了解</h1><ol>
+<li>banner.text 自定义学习</li>
+<li>配置文件 properties/yml。logback作为日志框架</li>
+<li>数据渲染。 thymeleaf   (或freemarker、beetl)</li>
+<li>整合。mysql,  mybatis(tk.mybatis国人封装)。</li>
+</ol>
+<blockquote>
+<p>未完  &gt; <a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p>
+</blockquote>
+
+	</div>
+	<div class="meta split">
+		
+		<time class="post-date" datetime="2019-08-17T09:47:01.209Z" itemprop="datePublished">2019-08-17</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="19_8_17-微服务的一些记录与了解" data-title="微服务的一些记录与了解" data-url="http://yoursite.com/2019/08/17/19_8_17-微服务的一些记录与了解/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 
