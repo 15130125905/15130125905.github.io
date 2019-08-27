@@ -86,7 +86,20 @@
 <li>第三方托管平台</li>
 <li>初始化仓库。 readme.md (md为markdown语法的文件) + 开源协议（apache为公开）</li>
 </ul>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><ul>
+<h3 id="第一次上传项目到github"><a href="#第一次上传项目到github" class="headerlink" title="第一次上传项目到github"></a>第一次上传项目到github</h3><ol>
+<li>下载git</li>
+<li>邮箱注册 <code>git config --global user.name &quot;liu**&quot;</code><br><code>git config --global user.email &quot;***@qq.com&quot;</code></li>
+<li>查看是否存在密钥ssh keys <code>cd ~/.ssh</code>, 若出现“No such file or directory”,则表示需要创建一个ssh keys。</li>
+<li>创建一个文件夹，进入文件夹执行<code>git init</code>可变成仓库</li>
+<li><code>git status</code>来查看你当前的状态</li>
+<li><code>git add .</code>加入中间缓存</li>
+<li><code>git commit -m &quot;日志&quot;</code>把项目提交到仓库</li>
+<li>在Github上创建一个Git仓库。</li>
+<li>将github仓库与本地仓库进行关联， <code>git remote add origin  仓库链接</code></li>
+<li>在本地仓库同步github 代码, <code>git pull --rebase origin master</code></li>
+<li>然后将本地仓库代码推送到github， <code>git push origin master</code> <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1></li>
+</ol>
+<ul>
 <li>简介<ul>
 <li>分布式版本库，本身是个命令行工具</li>
 <li>windows下载git, tortoiseGit以及乌龟的中文包</li>

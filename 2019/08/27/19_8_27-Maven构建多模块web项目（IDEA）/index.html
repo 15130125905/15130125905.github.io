@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Maven构建多模块web项目（IDEA） | 刘耀方的个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- css('js/google-code-prettify/vibrant-ink.min.css') -->
+
+  </head>
+
+  <body>
+</body></html>
+<header>
+	<a id="logo" href="/" title="刘耀方的个人博客">
+	<img src="/favicon.png" alt="刘耀方的个人博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="请输入名称..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://weibo.com/u/5726097602" target="_blank">微博</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      Maven构建多模块web项目（IDEA）
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><ul>
+<li>dangmanager =&gt; 父模块<ul>
+<li>manager_common =&gt; 公共模块（如工具类）</li>
+<li>manager_pojo =&gt; 实体模型模块</li>
+<li>manager_dao =&gt; 持久层模块</li>
+<li>manager_dao =&gt; 持久层模块</li>
+<li>manager_service =&gt; 服务层模块</li>
+<li>manager_controller =&gt; 控制层模块（配置文件所在）</li>
+</ul>
+</li>
+</ul>
+<h1 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h1><ol>
+<li>构建父模块 new - &gt; project</li>
+<li>构建各个模块new - &gt; module</li>
+</ol>
+<p>需要关联某个模块时加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;artifactId&gt;Utils&lt;/artifactId&gt;</span><br><span class="line">      &lt;groupId&gt;com.liu**.mvn3&lt;/groupId&gt;</span><br><span class="line">      &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>clean和install各个模块</p>
+<blockquote>
+<p>注意：首先clean和install父模块；然后先clean和install没有依赖的模块，再clean和install有依赖的模块（其依赖的模块必须先进行clean和 install，否则会依赖管理打包faild）;两个模块不能相互加入依赖模块坐标，会报循环调用错误。（有相互依赖的情况下将两个模块合并写成一个模块）<br>（当install一个模块，maven发现模块内依赖其他模块jar，maven会在本地仓库中寻找该jar，找不到自然会报错。install作用就是将模块打包成jar记录在本地仓库供依赖模块使用）</p>
+</blockquote>
+</li>
+<li><p>使用Maven Tomcat Plugin运行web项目</p>
+<p>在父模块pom加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 多模块运行插件 --&gt;</span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;port&gt;7090&lt;/port&gt;</span><br><span class="line">                    &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行 <code>clean tomcat7:run</code></p>
+</li>
+</ol>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><blockquote>
+<p> 父模块打包方式为pom，子模块（无子模块）打包方式为jar, controller打包方式为war;</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>未完<br><a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p>
+</blockquote>
+
+	</div>
+	<div class="meta split">
+		
+		<time class="post-date" datetime="2019-08-27T14:48:34.999Z" itemprop="datePublished">2019-08-27</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="19_8_27-Maven构建多模块web项目（IDEA）" data-title="Maven构建多模块web项目（IDEA）" data-url="http://yoursite.com/2019/08/27/19_8_27-Maven构建多模块web项目（IDEA）/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://raw.githubusercontent.com/15130125905/head/master/1.jpg' alt='liuyaofang'>
+					<div class="media__body">
+						<h4>刘耀方</h4>
+						<p class='site-description'>有道无术，术尚可求也;有术无道，止于术。</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="https://weibo.com/u/5726097602" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/15130125905" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+		<span>Theme by <a target="_blank" href="http://github.com/15130125905">liuyaofang</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
