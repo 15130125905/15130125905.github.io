@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>webService的一些记录 | 刘耀方的个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- css('js/google-code-prettify/vibrant-ink.min.css') -->
+
+  </head>
+
+  <body>
+</body></html>
+<header>
+	<a id="logo" href="/" title="刘耀方的个人博客">
+	<img src="/favicon.png" alt="刘耀方的个人博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="请输入名称..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://weibo.com/u/5726097602" target="_blank">微博</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      webService的一些记录
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ol>
+<li>webService是什么<br>(1) 服务端提供资源给客户端应用访问<br>(2) 跨语言，跨平台的应用间通信整合方案<ol start="2">
+<li>为什么使用webservice<br>能解决跨语言，跨平台，远程调用</li>
+<li>什么时候用webservice<br>(1)新旧系统<br>(2)不同公司之间的应用<br>(3)提供数据的应用</li>
+<li>webService中的术语<br>(1) WSDL(web service definition language)  -  WSDL是webservice定义语言, 对应.wsdl文档, 一个webservice会对应一个唯一的wsdl文档, 定义了客户端与服务端发送请求和响应的数据格式和过程<br>(2)SOAP(simple object  access protocal) - SOAP是”简单对象访问协议”是一种简单的、基于HTTP和XML的协议, 用于在WEB上交换结构化的数据 ; soap消息：请求消息和响应消息<br>(3)SEI(WebService EndPoint Interface) - SEI是web service的终端接口，就是WebService服务器端用来处理请求的接口<br>(4) CXF(Celtix + XFire) - 一个apache的用于开发webservice服务器端和客户端的框架。</li>
+</ol>
+</li>
+</ol>
+<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><ol>
+<li><p>pom.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 添加Spring支持 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-beans&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-aop&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- 添加cxf支持 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;cxf-core&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.1.5&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;cxf-rt-frontend-jaxws&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.1.5&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;cxf-rt-transports-http&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.1.5&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>web.xml  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- Spring配置文件 --&gt;</span><br><span class="line">	&lt;context-param&gt;</span><br><span class="line">		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">		&lt;param-value&gt;classpath:applicationContext*.xml&lt;/param-value&gt;</span><br><span class="line">	&lt;/context-param&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- Spring监听器 --&gt;</span><br><span class="line">	&lt;listener&gt;</span><br><span class="line">		&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">	&lt;/listener&gt;</span><br><span class="line"></span><br><span class="line">	&lt;servlet&gt;</span><br><span class="line">		&lt;servlet-name&gt;CXFServlet&lt;/servlet-name&gt;</span><br><span class="line">		&lt;servlet-class&gt;org.apache.cxf.transport.servlet.CXFServlet&lt;/servlet-class&gt;</span><br><span class="line">	&lt;/servlet&gt;</span><br><span class="line">	&lt;servlet-mapping&gt;</span><br><span class="line">		&lt;servlet-name&gt;CXFServlet&lt;/servlet-name&gt;</span><br><span class="line">		&lt;url-pattern&gt;/webservice/*&lt;/url-pattern&gt;</span><br><span class="line">	&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>applicationContext.xml</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</span><br><span class="line">	xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">	xmlns:jee=&quot;http://www.springframework.org/schema/jee&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;</span><br><span class="line">	xmlns:jaxws=&quot;http://cxf.apache.org/jaxws&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;    </span><br><span class="line">        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  </span><br><span class="line">        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  </span><br><span class="line">        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  </span><br><span class="line">        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  </span><br><span class="line">        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd</span><br><span class="line">        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">	&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;</span><br><span class="line">	&lt;import resource=&quot;classpath:META-INF/cxf/cxf-servlet.xml&quot; /&gt;</span><br><span class="line">	&lt;!-- 用import标签引入cxf的xml配置文件 --&gt;</span><br><span class="line">	&lt;!-- &lt;import resource=&quot;/CXFConfig/CXFServices.xml&quot; /&gt; --&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 自动扫描 --&gt;</span><br><span class="line">	&lt;context:component-scan base-package=&quot;com.itic.webservice&quot; /&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 定义服务提供者 --&gt;</span><br><span class="line">	&lt;jaxws:endpoint implementor=&quot;com.itic.webservice.HelloWorldImpl&quot; address=&quot;/helloWorld&quot;&gt;&lt;/jaxws:endpoint&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 定义服务提供者 --&gt;</span><br><span class="line">	&lt;!-- &lt;jaxws:endpoint implementor=&quot;com.itic.webservice.HelloWorldImpl&quot; address=&quot;/HelloWorld&quot;&gt;</span><br><span class="line">		添加in拦截器</span><br><span class="line">		&lt;jaxws:inInterceptors&gt;</span><br><span class="line">			&lt;bean class=&quot;org.apache.cxf.interceptor.LoggingInInterceptor&quot; /&gt;</span><br><span class="line">			&lt;bean class=&quot;com.java1234.interceptor.MyInterceptor&quot; /&gt;</span><br><span class="line">		&lt;/jaxws:inInterceptors&gt;</span><br><span class="line">		添加out拦截器</span><br><span class="line">		&lt;jaxws:outInterceptors&gt;</span><br><span class="line">			&lt;bean class=&quot;org.apache.cxf.interceptor.LoggingInInterceptor&quot; /&gt;</span><br><span class="line">		&lt;/jaxws:outInterceptors&gt;</span><br><span class="line">	&lt;/jaxws:endpoint&gt; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>接口定义<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@WebService</span><br><span class="line">public interface HelloWorld &#123;</span><br><span class="line"></span><br><span class="line">	public String say(String str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<ol start="5">
+<li><p>实现类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@WebService(endpointInterface=&quot;com.itic.webservice.HelloWorld&quot;)</span><br><span class="line">//@Component(&quot;helloWorld&quot;)</span><br><span class="line">public class HelloWorldImpl implements HelloWorld &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public String say(String str) &#123;</span><br><span class="line">		return &quot;Hello &quot; + str;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到Tomcat  ，访问 <code>http://localhost:7090/WS_CXF/webservice</code> 或 <code>http://localhost:7090/WS_CXF/webservice/helloWorld?wsdl</code></p>
+</li>
+</ol>
+<h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><p>客户端代码编写，可以采用工具生成：</p>
+<ol>
+<li>进入到要生成的目录，执行<code>wsdl2java  http://localhost:7090/WS_CXF/webservice/helloWorld?wsdl</code>, 刷新工程</li>
+<li>我们需要做的是编写client的调用<ul>
+<li>创建服务视图对象</li>
+<li>从服务视图中获得PortType对象。</li>
+<li>调用PortType的方法(可以实现远程通信)</li>
+<li>接收方法的返回值(服务端响应的结果)。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		HelloWorld service = new HelloWorldImplService().getHelloWorldImplPort();</span><br><span class="line">		System.out.println(service.say(&quot;wanglao&quot;));</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+	</div>
+	<div class="meta split">
+		
+		<time class="post-date" datetime="2019-09-07T08:42:54.206Z" itemprop="datePublished">2019-09-07</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="19_9_7-webService的一些记录" data-title="webService的一些记录" data-url="http://yoursite.com/2019/09/07/19_9_7-webService的一些记录/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://raw.githubusercontent.com/15130125905/head/master/1.jpg' alt='liuyaofang'>
+					<div class="media__body">
+						<h4>刘耀方</h4>
+						<p class='site-description'>有道无术，术尚可求也;有术无道，止于术。</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="https://weibo.com/u/5726097602" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/15130125905" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+		<span>Theme by <a target="_blank" href="http://github.com/15130125905">liuyaofang</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
