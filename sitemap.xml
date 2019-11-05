@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/11/05/19_11_5-dubbo%20+%20zookeeper%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2019-11-05T15:46:26.946Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/09/07/19_9_7-webService%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2019-09-07T08:43:40.170Z</lastmod>
@@ -33,6 +40,13 @@
     <loc>http://yoursite.com/2019/08/27/19_8_27-websocket%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2019-08-27T13:48:26.153Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/08/21/19_8_21-%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E4%B9%8BSpringCloud/</loc>
+    
+    <lastmod>2019-08-21T07:22:08.194Z</lastmod>
     
   </url>
   

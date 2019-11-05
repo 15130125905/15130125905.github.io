@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>分布式开发之SpringCloud | 刘耀方的个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- css('js/google-code-prettify/vibrant-ink.min.css') -->
+
+  </head>
+
+  <body>
+</body></html>
+<header>
+	<a id="logo" href="/" title="刘耀方的个人博客">
+	<img src="/favicon.png" alt="刘耀方的个人博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="请输入名称..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://weibo.com/u/5726097602" target="_blank">微博</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      分布式开发之SpringCloud
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<blockquote>
+<p>苟日新，又日新，日日新。</p>
+</blockquote>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>springCloud是一个新的微服务框架。（dubbo为RPC框架）</li>
+</ul>
+<blockquote>
+<p>在微服务架构中，包括 服务注册与发现， 服务消费， 负载均衡， 熔断器， 智能路由， 配置管理 等</p>
+</blockquote>
+<h1 id="工程创建"><a href="#工程创建" class="headerlink" title="工程创建"></a>工程创建</h1><ol>
+<li>创建工程文件夹，用来放所有工程</li>
+<li>NEW DIRECTORY</li>
+<li>创建pom</li>
+</ol>
+<h1 id="服务注册与发现（Eureka）"><a href="#服务注册与发现（Eureka）" class="headerlink" title="服务注册与发现（Eureka）"></a>服务注册与发现（Eureka）</h1><h1 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h1><blockquote>
+<p>创建服务提供者</p>
+</blockquote>
+<h1 id="服务消费者（Ribbon-feign）"><a href="#服务消费者（Ribbon-feign）" class="headerlink" title="服务消费者（Ribbon,feign）"></a>服务消费者（Ribbon,feign）</h1><p>创建服务消费者<br>feign集成了Ribbon,并且默认实现负载均衡</p>
+<h1 id="熔断器（hystrix）"><a href="#熔断器（hystrix）" class="headerlink" title="熔断器（hystrix）"></a>熔断器（hystrix）</h1><blockquote>
+<p>使用熔断器防止服务雪崩</p>
+</blockquote>
+<p>feign自带熔断器，需要开启。</p>
+<h1 id="仪表盘监控"><a href="#仪表盘监控" class="headerlink" title="仪表盘监控"></a>仪表盘监控</h1><blockquote>
+<p>使用熔断器仪表盘监控，就是监控熔断</p>
+</blockquote>
+<h1 id="路由网关（Zuul）"><a href="#路由网关（Zuul）" class="headerlink" title="路由网关（Zuul）"></a>路由网关（Zuul）</h1><blockquote>
+<p>使用路由网关统一访问接口。</p>
+</blockquote>
+<p>zuul 主要功能是路由转发和过滤器， 以及当路由服务可以访问，但是因为网络或其他原因服务访问失败时，可以配置路由失败回调，不将500，404一些服务问题暴漏给客户端。</p>
+<ol>
+<li><p>路由转发实现</p>
+</li>
+<li><p>过滤器实现</p>
+</li>
+</ol>
+<h1 id="分布式配置中心（SpringCloud-Config）"><a href="#分布式配置中心（SpringCloud-Config）" class="headerlink" title="分布式配置中心（SpringCloud Config）"></a>分布式配置中心（SpringCloud Config）</h1><blockquote>
+<p>服务过多，配置文件统一管理</p>
+</blockquote>
+<ol>
+<li><p>服务端（端口默认8888）</p>
+</li>
+<li><p>客户端（springBoot profile）</p>
+</li>
+</ol>
+<h1 id="服务链路追踪（ZipKin）"><a href="#服务链路追踪（ZipKin）" class="headerlink" title="服务链路追踪（ZipKin）"></a>服务链路追踪（ZipKin）</h1><blockquote>
+<p>调用链分析</p>
+</blockquote>
+<p>默认端口9411</p>
+<h1 id="服务监控（SpringBoot-Admin）"><a href="#服务监控（SpringBoot-Admin）" class="headerlink" title="服务监控（SpringBoot  Admin）"></a>服务监控（SpringBoot  Admin）</h1><blockquote>
+<p>状态收集， 健康检查</p>
+</blockquote>
+<h1 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h1><ol>
+<li>注册与发现</li>
+<li>分布式配置中心</li>
+<li>服务提供者</li>
+<li>服务消费者</li>
+<li>API网关</li>
+</ol>
+
+	</div>
+	<div class="meta split">
+		
+		<time class="post-date" datetime="2019-08-21T07:21:48.464Z" itemprop="datePublished">2019-08-21</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="19_8_21-分布式开发之SpringCloud" data-title="分布式开发之SpringCloud" data-url="http://yoursite.com/2019/08/21/19_8_21-分布式开发之SpringCloud/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://raw.githubusercontent.com/15130125905/head/master/1.jpg' alt='liuyaofang'>
+					<div class="media__body">
+						<h4>刘耀方</h4>
+						<p class='site-description'>有道无术，术尚可求也;有术无道，止于术。</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="https://weibo.com/u/5726097602" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/15130125905" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+		<span>Theme by <a target="_blank" href="http://github.com/15130125905">liuyaofang</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
