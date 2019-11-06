@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-05T15:46:26.946Z</updated>
+  <updated>2019-07-24T14:04:37.943Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/11/06/19_11_5-hello-world/"/>
+    <id>http://yoursite.com/2019/11/06/19_11_5-hello-world/</id>
+    <published>2019-11-06T15:16:39.491Z</published>
+    <updated>2019-07-24T14:04:37.943Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>dubbo + zookeeper学习</title>
@@ -447,31 +468,6 @@
       
       
         &lt;h1 id=&quot;基本命令&quot;&gt;&lt;a href=&quot;#基本命令&quot; class=&quot;headerlink&quot; title=&quot;基本命令&quot;&gt;&lt;/a&gt;基本命令&lt;/h1&gt;&lt;h2 id=&quot;查看文件&quot;&gt;&lt;a href=&quot;#查看文件&quot; class=&quot;headerlink&quot; title=&quot;查看文件&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>docker的基本用法</title>
-    <link href="http://yoursite.com/2019/08/01/19_8_1-docker%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/08/01/19_8_1-docker基本用法/</id>
-    <published>2019-08-01T15:36:23.650Z</published>
-    <updated>2019-08-05T14:10:20.338Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>学习要有目的性。</p></blockquote><hr><h1 id="镜像基本操作"><a href="#镜像基本操作" class="headerlink" title="镜像基本操作"></a>镜像基本操作</h1><h2 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:16.04</span><br></pre></td></tr></table></figure><h2 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a>运行镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm \</span><br><span class="line">    ubuntu:16.04 \</span><br><span class="line">    bash</span><br></pre></td></tr></table></figure><ul><li>-it：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。</li><li>-rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 –rm 可以避免浪费空间。</li><li>ubuntu:16.04：这是指用 ubuntu:16.04 镜像为基础来启动容器。</li><li>bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 bash。</li></ul><h2 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure><h2 id="镜像删除"><a href="#镜像删除" class="headerlink" title="镜像删除"></a>镜像删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除所有仓库名为 redis 的镜像：</span><br><span class="line">$ docker image rm $(docker image ls -q redis)</span><br></pre></td></tr></table></figure><h2 id="虚悬镜像删除"><a href="#虚悬镜像删除" class="headerlink" title="虚悬镜像删除"></a>虚悬镜像删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image prune</span><br></pre></td></tr></table></figure><h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><ol><li>编写Dockerfile</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM tomcat</span><br><span class="line">WORKDIR /usr/local/tomcat/webapps</span><br><span class="line">COPY ./demo.war .</span><br><span class="line">WORKDIR /usr/local/tomcat</span><br><span class="line">EXPOSE 8080</span><br></pre></td></tr></table></figure><blockquote><p>这一个就需要工作经验了。需要经常写，写了一个简单的例子<br>FROM:以tomcat为基础镜像，from是dockerFile必须的，且放到开头<br>WORKDIR: 是将默认的工作路径变为/usr/local/tomcat/webapps，因为下面需要将war包放到webapps下进行部署<br>COPY:  复制<strong>上下文路径的demo.war(.是上下文的意思，就是dockfile所在的文件夹)</strong>到当前文件夹（上一步将工作路径改变了，默认为webapps）<br>将工作路径变回原样<br>EXPOSE： 端口，仅仅是个说明，方便别人阅读</p></blockquote><ol start="2"><li>根据dockerfile构建镜像</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker build [选项] &lt;上下文路径/URL/-&gt;</span><br><span class="line">docker build -t tomcat:v1 .</span><br></pre></td></tr></table></figure><blockquote><p>当构建的时候，用户会指定构建镜像上下文的路径，docker build 命令得知这个路径后，会将路径下的所有内容打包，然后上传给 Docker 引擎。这样 Docker 引擎收到这个上下文包后，展开就会获得构建镜像所需的一切文件。<br>现在就可以理解刚才的命令 docker build -t nginx:v3 . 中的这个 .，实际上是在指定上下文的目录，docker build 命令会将该目录下的内容打包交给 Docker 引擎以帮助构建镜像。</p></blockquote><hr><h1 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h1><h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -t -i ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure><h2 id="启动终止容器"><a href="#启动终止容器" class="headerlink" title="启动终止容器"></a>启动终止容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container start 容器ID</span><br></pre></td></tr></table></figure><h2 id="守护态运行"><a href="#守护态运行" class="headerlink" title="守护态运行"></a>守护态运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过添加 -d 参数来实现</span><br></pre></td></tr></table></figure><h2 id="终止容器"><a href="#终止容器" class="headerlink" title="终止容器"></a>终止容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container stop</span><br></pre></td></tr></table></figure><h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 69d1 bash</span><br></pre></td></tr></table></figure><h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker container rm :删除一个终止状态的容器;要删除一个运行中的容器，添加 -f 参数</span><br><span class="line">docker container prune : 清理掉所有处于终止状态的容器</span><br></pre></td></tr></table></figure><hr><h1 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h1><h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><p>数据卷是可供一个，多个容器共同使用。共享数据，数据持久化。通过<code>-v 宿主机：容器</code>参数实现。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -d \ </span><br><span class="line">-p 8081:8080 \</span><br><span class="line">-v /usr/local/docker/tomcatIndex:/usr/local/tomcat/webapps/ROOT \</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure><ul><li>-d 后台运行</li><li>-P 大P为随机端口映射，小p需配置端口映射</li><li>-v  宿主机：容器 , 挂载主机数据卷</li></ul><hr><h1 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h1><blockquote><p>dokcer-compose用于快速部署分布式应用。是容器和容器之间的相互配合。由python编写。</p></blockquote><ul><li><p>创建docker-compose.yml。yml语言不能用tab，必须空格</p></li><li><p>简单应用cmpose启动一个8080的tomcat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;2&quot;</span><br><span class="line">services:</span><br><span class="line">  tomcat:</span><br><span class="line">    restart: always</span><br><span class="line">    image: tomcat</span><br><span class="line">    container_name: tomcat</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8080:8080&quot;</span><br></pre></td></tr></table></figure></li><li><p>启动compose。 docker-compose  up  (参数-d后台运行)</p></li><li><p>关闭容器  docker-compose dowm</p></li><li><p>查看日志   docker-compose logs tomcat</p></li></ul><blockquote><p>未完<br><a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;学习要有目的性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;镜像基本操作&quot;&gt;&lt;a href=&quot;#镜像基本操作&quot; class=&quot;headerlink&quot; title=&quot;镜像基本操作&quot;&gt;&lt;/a&gt;镜像基本操作&lt;/h1&gt;&lt;h2 id=&quot;获
       
     
     </summary>
