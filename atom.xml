@@ -134,31 +134,6 @@
   </entry>
   
   <entry>
-    <title>分布式开发之SpringCloud</title>
-    <link href="http://yoursite.com/2019/08/21/19_8_21-%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E4%B9%8BSpringCloud/"/>
-    <id>http://yoursite.com/2019/08/21/19_8_21-分布式开发之SpringCloud/</id>
-    <published>2019-08-21T07:21:48.464Z</published>
-    <updated>2019-08-21T07:22:08.194Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>苟日新，又日新，日日新。</p></blockquote><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul><li>springCloud是一个新的微服务框架。（dubbo为RPC框架）</li></ul><blockquote><p>在微服务架构中，包括 服务注册与发现， 服务消费， 负载均衡， 熔断器， 智能路由， 配置管理 等</p></blockquote><h1 id="工程创建"><a href="#工程创建" class="headerlink" title="工程创建"></a>工程创建</h1><ol><li>创建工程文件夹，用来放所有工程</li><li>NEW DIRECTORY</li><li>创建pom</li></ol><h1 id="服务注册与发现（Eureka）"><a href="#服务注册与发现（Eureka）" class="headerlink" title="服务注册与发现（Eureka）"></a>服务注册与发现（Eureka）</h1><h1 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h1><blockquote><p>创建服务提供者</p></blockquote><h1 id="服务消费者（Ribbon-feign）"><a href="#服务消费者（Ribbon-feign）" class="headerlink" title="服务消费者（Ribbon,feign）"></a>服务消费者（Ribbon,feign）</h1><p>创建服务消费者<br>feign集成了Ribbon,并且默认实现负载均衡</p><h1 id="熔断器（hystrix）"><a href="#熔断器（hystrix）" class="headerlink" title="熔断器（hystrix）"></a>熔断器（hystrix）</h1><blockquote><p>使用熔断器防止服务雪崩</p></blockquote><p>feign自带熔断器，需要开启。</p><h1 id="仪表盘监控"><a href="#仪表盘监控" class="headerlink" title="仪表盘监控"></a>仪表盘监控</h1><blockquote><p>使用熔断器仪表盘监控，就是监控熔断</p></blockquote><h1 id="路由网关（Zuul）"><a href="#路由网关（Zuul）" class="headerlink" title="路由网关（Zuul）"></a>路由网关（Zuul）</h1><blockquote><p>使用路由网关统一访问接口。</p></blockquote><p>zuul 主要功能是路由转发和过滤器， 以及当路由服务可以访问，但是因为网络或其他原因服务访问失败时，可以配置路由失败回调，不将500，404一些服务问题暴漏给客户端。</p><ol><li><p>路由转发实现</p></li><li><p>过滤器实现</p></li></ol><h1 id="分布式配置中心（SpringCloud-Config）"><a href="#分布式配置中心（SpringCloud-Config）" class="headerlink" title="分布式配置中心（SpringCloud Config）"></a>分布式配置中心（SpringCloud Config）</h1><blockquote><p>服务过多，配置文件统一管理</p></blockquote><ol><li><p>服务端（端口默认8888）</p></li><li><p>客户端（springBoot profile）</p></li></ol><h1 id="服务链路追踪（ZipKin）"><a href="#服务链路追踪（ZipKin）" class="headerlink" title="服务链路追踪（ZipKin）"></a>服务链路追踪（ZipKin）</h1><blockquote><p>调用链分析</p></blockquote><p>默认端口9411</p><h1 id="服务监控（SpringBoot-Admin）"><a href="#服务监控（SpringBoot-Admin）" class="headerlink" title="服务监控（SpringBoot  Admin）"></a>服务监控（SpringBoot  Admin）</h1><blockquote><p>状态收集， 健康检查</p></blockquote><h1 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h1><ol><li>注册与发现</li><li>分布式配置中心</li><li>服务提供者</li><li>服务消费者</li><li>API网关</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;苟日新，又日新，日日新。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;springCloud是一个新的微
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>intellij idea使用记录</title>
     <link href="http://yoursite.com/2019/08/19/19_8_19-intellij%20idea%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2019/08/19/19_8_19-intellij idea使用记录/</id>
@@ -472,6 +447,31 @@
       
       
         &lt;h1 id=&quot;基本命令&quot;&gt;&lt;a href=&quot;#基本命令&quot; class=&quot;headerlink&quot; title=&quot;基本命令&quot;&gt;&lt;/a&gt;基本命令&lt;/h1&gt;&lt;h2 id=&quot;查看文件&quot;&gt;&lt;a href=&quot;#查看文件&quot; class=&quot;headerlink&quot; title=&quot;查看文件&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker的基本用法</title>
+    <link href="http://yoursite.com/2019/08/01/19_8_1-docker%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/08/01/19_8_1-docker基本用法/</id>
+    <published>2019-08-01T15:36:23.650Z</published>
+    <updated>2019-08-05T14:10:20.338Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>学习要有目的性。</p></blockquote><hr><h1 id="镜像基本操作"><a href="#镜像基本操作" class="headerlink" title="镜像基本操作"></a>镜像基本操作</h1><h2 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:16.04</span><br></pre></td></tr></table></figure><h2 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a>运行镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm \</span><br><span class="line">    ubuntu:16.04 \</span><br><span class="line">    bash</span><br></pre></td></tr></table></figure><ul><li>-it：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。</li><li>-rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 –rm 可以避免浪费空间。</li><li>ubuntu:16.04：这是指用 ubuntu:16.04 镜像为基础来启动容器。</li><li>bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 bash。</li></ul><h2 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure><h2 id="镜像删除"><a href="#镜像删除" class="headerlink" title="镜像删除"></a>镜像删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除所有仓库名为 redis 的镜像：</span><br><span class="line">$ docker image rm $(docker image ls -q redis)</span><br></pre></td></tr></table></figure><h2 id="虚悬镜像删除"><a href="#虚悬镜像删除" class="headerlink" title="虚悬镜像删除"></a>虚悬镜像删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image prune</span><br></pre></td></tr></table></figure><h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><ol><li>编写Dockerfile</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM tomcat</span><br><span class="line">WORKDIR /usr/local/tomcat/webapps</span><br><span class="line">COPY ./demo.war .</span><br><span class="line">WORKDIR /usr/local/tomcat</span><br><span class="line">EXPOSE 8080</span><br></pre></td></tr></table></figure><blockquote><p>这一个就需要工作经验了。需要经常写，写了一个简单的例子<br>FROM:以tomcat为基础镜像，from是dockerFile必须的，且放到开头<br>WORKDIR: 是将默认的工作路径变为/usr/local/tomcat/webapps，因为下面需要将war包放到webapps下进行部署<br>COPY:  复制<strong>上下文路径的demo.war(.是上下文的意思，就是dockfile所在的文件夹)</strong>到当前文件夹（上一步将工作路径改变了，默认为webapps）<br>将工作路径变回原样<br>EXPOSE： 端口，仅仅是个说明，方便别人阅读</p></blockquote><ol start="2"><li>根据dockerfile构建镜像</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker build [选项] &lt;上下文路径/URL/-&gt;</span><br><span class="line">docker build -t tomcat:v1 .</span><br></pre></td></tr></table></figure><blockquote><p>当构建的时候，用户会指定构建镜像上下文的路径，docker build 命令得知这个路径后，会将路径下的所有内容打包，然后上传给 Docker 引擎。这样 Docker 引擎收到这个上下文包后，展开就会获得构建镜像所需的一切文件。<br>现在就可以理解刚才的命令 docker build -t nginx:v3 . 中的这个 .，实际上是在指定上下文的目录，docker build 命令会将该目录下的内容打包交给 Docker 引擎以帮助构建镜像。</p></blockquote><hr><h1 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h1><h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -t -i ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure><h2 id="启动终止容器"><a href="#启动终止容器" class="headerlink" title="启动终止容器"></a>启动终止容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container start 容器ID</span><br></pre></td></tr></table></figure><h2 id="守护态运行"><a href="#守护态运行" class="headerlink" title="守护态运行"></a>守护态运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过添加 -d 参数来实现</span><br></pre></td></tr></table></figure><h2 id="终止容器"><a href="#终止容器" class="headerlink" title="终止容器"></a>终止容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container stop</span><br></pre></td></tr></table></figure><h2 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 69d1 bash</span><br></pre></td></tr></table></figure><h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker container rm :删除一个终止状态的容器;要删除一个运行中的容器，添加 -f 参数</span><br><span class="line">docker container prune : 清理掉所有处于终止状态的容器</span><br></pre></td></tr></table></figure><hr><h1 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h1><h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><p>数据卷是可供一个，多个容器共同使用。共享数据，数据持久化。通过<code>-v 宿主机：容器</code>参数实现。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -d \ </span><br><span class="line">-p 8081:8080 \</span><br><span class="line">-v /usr/local/docker/tomcatIndex:/usr/local/tomcat/webapps/ROOT \</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure><ul><li>-d 后台运行</li><li>-P 大P为随机端口映射，小p需配置端口映射</li><li>-v  宿主机：容器 , 挂载主机数据卷</li></ul><hr><h1 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h1><blockquote><p>dokcer-compose用于快速部署分布式应用。是容器和容器之间的相互配合。由python编写。</p></blockquote><ul><li><p>创建docker-compose.yml。yml语言不能用tab，必须空格</p></li><li><p>简单应用cmpose启动一个8080的tomcat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;2&quot;</span><br><span class="line">services:</span><br><span class="line">  tomcat:</span><br><span class="line">    restart: always</span><br><span class="line">    image: tomcat</span><br><span class="line">    container_name: tomcat</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8080:8080&quot;</span><br></pre></td></tr></table></figure></li><li><p>启动compose。 docker-compose  up  (参数-d后台运行)</p></li><li><p>关闭容器  docker-compose dowm</p></li><li><p>查看日志   docker-compose logs tomcat</p></li></ul><blockquote><p>未完<br><a href="https://www.liuyaofang.top/" title="请点击" target="_blank" rel="noopener">我的博客</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;学习要有目的性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;镜像基本操作&quot;&gt;&lt;a href=&quot;#镜像基本操作&quot; class=&quot;headerlink&quot; title=&quot;镜像基本操作&quot;&gt;&lt;/a&gt;镜像基本操作&lt;/h1&gt;&lt;h2 id=&quot;获
       
     
     </summary>
