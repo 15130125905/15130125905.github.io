@@ -86,8 +86,9 @@
 <li>dubbo特性<br>（1）面向接口的RPC框架<br>（2）负载均衡<br>（3）运行期间流量调度，逐渐过渡上线服务器台数<br>（4）可视化治理与运维界面</li>
 <li>服务注册推荐zookeeper</li>
 </ol>
-<h1 id="安装监控中心（可视化界面）"><a href="#安装监控中心（可视化界面）" class="headerlink" title="安装监控中心（可视化界面）"></a>安装监控中心（可视化界面）</h1><p><a href="https://github.com/apache/dubbo-admin" target="_blank" rel="noopener">gitHub下载</a></p>
-<h1 id="服务提供者、服务消费者、API接口"><a href="#服务提供者、服务消费者、API接口" class="headerlink" title="服务提供者、服务消费者、API接口"></a>服务提供者、服务消费者、API接口</h1><ol>
+<h1 id="安装监控中心（可视化界面）"><a href="#安装监控中心（可视化界面）" class="headerlink" title="安装监控中心（可视化界面）"></a>安装监控中心（可视化界面）</h1><ol>
+<li><a href="https://github.com/apache/dubbo-admin" target="_blank" rel="noopener">dubbo-admin</a> : 管理控制台。主要包含：路由规则、动态配置、服务降级、访问控制、权重调整、负载均衡等管理功能</li>
+<li>dubbo-monitor-simple ： 简单的监控中心。主要用来统计服务的调用次数和调用时间，服务消费者和 提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心，监控中心则使用数据绘制图表来显示。<h1 id="服务提供者、服务消费者、API接口"><a href="#服务提供者、服务消费者、API接口" class="headerlink" title="服务提供者、服务消费者、API接口"></a>服务提供者、服务消费者、API接口</h1></li>
 <li>将服务提供者注册到注册中心 （暴漏服务）<br>（1）导入dubbo依赖以及zookeeper的客户端（dubbo2.6以上用curator）<br>（2）配置提供者</li>
 <li>让消费者去注册中心订阅提供者的服务地址</li>
 </ol>
@@ -131,6 +132,59 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.itic&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;dubbo_consumer&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;dubbo_consumer&lt;/name&gt;</span><br><span class="line">  &lt;url&gt;http://maven.apache.org&lt;/url&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.8.1&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;com.itic&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;dubbo_orderApi&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.itic.dubbo_consumer;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">import com.itic.dubbo_orderApi.api.OrderService;</span><br><span class="line">import com.itic.dubbo_orderApi.bean.UserAddress;</span><br><span class="line"></span><br><span class="line">public class Consumer &#123;</span><br><span class="line">	public static void main(String[] args) throws Exception &#123;</span><br><span class="line">		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] &#123; &quot;Consumer.xml&quot; &#125;);</span><br><span class="line">		context.start();</span><br><span class="line">		// Obtaining a remote service proxy</span><br><span class="line">		OrderService demoService = (OrderService) context.getBean(OrderService.class);</span><br><span class="line">		// Executing remote methods</span><br><span class="line">		List&lt;UserAddress&gt; hello = demoService.initOrder(&quot;1&quot;);</span><br><span class="line">		for (UserAddress userAddress : hello) &#123;</span><br><span class="line">			System.out.println(userAddress.getAddress());</span><br><span class="line">		&#125;</span><br><span class="line">		// Display the call result</span><br><span class="line">		System.out.println(&quot;END&quot;);</span><br><span class="line">		System.in.read(); // press any key to exit</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="spring-boot整合"><a href="#spring-boot整合" class="headerlink" title="spring-boot整合"></a>spring-boot整合</h1><ol>
+<li>在pom.xml导入dubbo-spring-boot-starter\</li>
+<li>在properties中配置（之前的xml）</li>
+<li>暴露服务（注解@Service） ; 消费服务（注解：@Reference）</li>
+</ol>
+<h1 id="dubbo覆盖策略"><a href="#dubbo覆盖策略" class="headerlink" title="dubbo覆盖策略"></a>dubbo覆盖策略</h1><p>虚拟机参数 &gt; xml &gt; dubbo.properties</p>
+<h1 id="启动时检查"><a href="#启动时检查" class="headerlink" title="启动时检查"></a>启动时检查</h1><p>check=”false” 只有在调用的时候才会检查</p>
+<h1 id="超时设置（毫秒）"><a href="#超时设置（毫秒）" class="headerlink" title="超时设置（毫秒）"></a>超时设置（毫秒）</h1><ol>
+<li>方法优先，接口次之，全局再次之</li>
+<li>如果级别一样，消费者优先</li>
+</ol>
+<h1 id="重试次数"><a href="#重试次数" class="headerlink" title="重试次数"></a>重试次数</h1><p>retries 重试次数不包含第一次</p>
+<ul>
+<li>幂等（设置重试次数） - 查询，删除，修改不会改变结果</li>
+<li>非幂等（不能设置重试次数） - 新增</li>
+</ul>
+<h1 id="多版本"><a href="#多版本" class="headerlink" title="多版本"></a>多版本</h1><p>version  :  实现灰度发布；</p>
+<h1 id="本地存根"><a href="#本地存根" class="headerlink" title="本地存根"></a>本地存根</h1><p>stub 。 在调用真的接口前，先做某些事，实现本地接口，并创建有参构造器，参数为接口（代理），配置xml 的stub</p>
+<h1 id="dubbo配置与springBoot整合的三种方式"><a href="#dubbo配置与springBoot整合的三种方式" class="headerlink" title="dubbo配置与springBoot整合的三种方式"></a>dubbo配置与springBoot整合的三种方式</h1><ul>
+<li>导入dubbo-starter,在application配置，@Service @Reference</li>
+<li>保留dubbo 的xml配置文件，导入dubbo-starter,使用@ImportantResouce导入xml配置文件</li>
+<li>将每一个组件手动创建（闲的）</li>
+</ul>
+<h1 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h1><ol>
+<li><p>zookeeper宕机<br>zookeeper宕机后，还可以为消费者提供服务 （如果调用过，注册中心宕机后，会通过缓存提供服务）</p>
+</li>
+<li><p>直连，绕过注册中心</p>
+</li>
+</ol>
+<h1 id="集群下dubbo负载均衡设置"><a href="#集群下dubbo负载均衡设置" class="headerlink" title="集群下dubbo负载均衡设置"></a>集群下dubbo负载均衡设置</h1><p>负载均衡策略</p>
+<ol>
+<li>随机（根据权重设置随机率）</li>
+<li>轮询</li>
+<li>最少活跃数</li>
+<li>一致性Hash,相同的参数发给同一个提供者</li>
+</ol>
+<h1 id="服务降级"><a href="#服务降级" class="headerlink" title="服务降级"></a>服务降级</h1><p>当服务器压力剧增，牺牲某些用户利益，保重大部分利益。</p>
+<ol>
+<li>不发起远程调用，直接返回为空</li>
+<li>服务调用后失败返回为空</li>
+</ol>
+<h1 id="集群容错"><a href="#集群容错" class="headerlink" title="集群容错"></a>集群容错</h1><p>当调用一个服务失败，迅速切换。</p>
+<ol>
+<li>失败自动切换</li>
+<li>快速失败，只调用一次，失败立即报错</li>
+<li>失败安全，出现异常时，直接忽略（日志）</li>
+<li>失败自动恢复，记录失败，定时重发（消息通知）</li>
+<li>并行调用多个服务器，只要一个成功立即返回</li>
+<li>广播调用所有提供者，逐个调用，任意一个报错则报错（更新缓存或者日志）</li>
+</ol>
+<p>整合hystrix，可以在调用出现问题时，返回别的结果</p>
+
 	</div>
 	<div class="meta split">
 		
